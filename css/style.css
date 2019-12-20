@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+ body, .table, .table1{
+	border: 1px solid ;	
+}
+*/
+
+
+/*модальное окно*/
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+.modalDialog:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 5% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+input{
+      display: inline-block;
+     
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+/*конец модального окна*/
+.table {
+	display: block;
+
+}
+*{
+	margin: 0;
+}
+.container{
+	margin: 25px;
+}
+
+div.table{
+	margin: 24px;
+
+}
+
+div.table-body{
+display: flex;
+	height: 450px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+
+div.table-body > div{
+	background:#333333;
+	color: #cccccc;
+	font-weight: bold;
+	padding: 2px;
+	padding-left: 22px;
+	line-height: 30px;
+	border-bottom: 1px solid #0000ff;
+}
+.URL, .ND{
+
+	background-color: #E8F4E8;
+	max-width: 90%;
+	margin: 2px;
+	
+	padding-left:12px;
+	padding-bottom: 2px;
+}
+.URL:hover{
+	background-color: #D2F4D7;
+}
+.ND:hover{
+	background-color: #D2F4D7;
+}
+.but{
+	float: right;
+}
+.box-btn-clear{
+	display: none;
+}
+.catalog, .catalog2, .catalog3{
+	display: block;
+
+}
+.table1, .table2, .table3{
+	display:none;
+	max-height: 300px;
+	overflow-y:auto;
+}
+   /*Задаём общие параметры для всей страницы: шрифт и отступы*/
+    body{
+	background-color: #EEF3EE; 
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 16px;
+    }
+
+a:link{
+	text-decoration: none;
+}
