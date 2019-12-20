@@ -1,7 +1,7 @@
 
 
-(function Submit() {
-    $('#moya_forma form').submit(function() {
+
+    $('#send').onclick(function() {
         var newURL = $("#newURL").val();
         var nameURL = $("#nameURL").val();
         var desc = $("#desc").val();
@@ -16,5 +16,5 @@
         }
         http.send(null);
     });
-});
+
 
