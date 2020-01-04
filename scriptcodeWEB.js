@@ -59,3 +59,5 @@ function deleteLink (e) {
     
   return ContentService.createTextOutput("Задача успешно удалена!");
 }
+
+

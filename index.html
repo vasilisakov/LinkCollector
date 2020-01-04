@@ -38,20 +38,22 @@
 			<div class="tblbody" style="display: none" ></div>
 	</div>
 		<!-- модальное окно для обновления задачи -->
-<div class="modal fade" id="updateTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body"></div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
+		<div>
+<!-- модальное окно для обновления задачи -->
+
+			<div id="openModal2" class="modalDialog">
+				<div>
+				<a href="#close" title="Закрыть" class="close">X</a>
+				<h2>Окно ввода данных</h2>
+					<form id="myForm2">
+				<input type="text" id="newURL2" placeholder="Add new URL">
+				<input type="text" id="nameURL2" placeholder="Add name URL">
+				<input type="text" id="desc2" placeholder="Add description">
+				<input type="submit" value="Add URL"> 	
+			</form>
+				</div>
+			</div>
+	</div>
 	</div>
 
 </body>

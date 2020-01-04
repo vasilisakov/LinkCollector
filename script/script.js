@@ -1,4 +1,4 @@
-var myApp = "https://script.google.com/macros/s/AKfycbzux3DDKyE8zETm2_9yKXGtXcwq88Jb8BYyrXfiNa5LaqQhIr8/exec";
+var myApp = "https://script.google.com/macros/s/AKfycbwU3WyMG53pJjay-QXJfDBCGXd9Jovu_aar2mdYzT7fpGM_Uno/exec";
 //URL нашего приложения
 
 $( document ).ready(function() {
@@ -62,6 +62,7 @@ function linkTable (data) {
 					'</tr>'+
 					'<tr>'+
 					'<td hidden="true" >'+data[i][0]+'</td>'+
+				'<td><a href="#openModal2"><button type="button" class="btn btn-link">изменить</button></a></td>'+
 					'<td><button type="button" class="btn btn-link" onclick="deleteLink(\''+data[i][0]+'\')">Удалить</button></td>'+
 					'</tr>';
 		}
@@ -89,7 +90,8 @@ function deleteLink (link) {
     };
 	try { xhr.send(body);} catch (err) {console.log(err) }
 }	
-	
+
+
 	
 $( document ).ready(function(){
 
