@@ -67,10 +67,7 @@ input{
     }
 
 /*конец модального окна*/
-.table {
-	display: block;
 
-}
 *{
 	margin: 0;
 }
@@ -78,21 +75,18 @@ input{
 	margin: 25px;
 }
 
-div.table{
-	margin: 24px;
 
-}
 
-div.table-body{
-display: flex;
-	height: 450px;
-	overflow-y: auto;
+.table{
+	display: block;
+	max-height: 300px;
+	overflow-y:auto;
 	overflow-x: hidden;
 	box-sizing: border-box;
 }
 
 
-div.table-body > div{
+div tblbody > div{
 	background:#333333;
 	color: #cccccc;
 	font-weight: bold;
@@ -116,21 +110,10 @@ div.table-body > div{
 .ND:hover{
 	background-color: #D2F4D7;
 }
-.but{
-	float: right;
-}
-.box-btn-clear{
-	display: none;
-}
-.catalog, .catalog2, .catalog3{
-	display: block;
 
-}
-.table1, .table2, .table3{
-	display:none;
-	max-height: 300px;
-	overflow-y:auto;
-}
+
+
+
    /*Задаём общие параметры для всей страницы: шрифт и отступы*/
     body{
 	background-color: #EEF3EE; 

@@ -6,11 +6,11 @@
 			  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>LinkCollector new</title>
+	<title>LinkCollector</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="script/script.js"></script>
-	
+
 </head>
 
 <body>
@@ -20,45 +20,39 @@
 		<h2 class="catalog">catalog 1</h2>
 		<!-- Поле ввода, куда пишем новые задачи -->
 		<div id="tdlApp">
-			<form id="myForm">
-				<input type="text" id="newURL" placeholder="Add new URL">
-				<input type="text" id="nameURL" placeholder="Add name URL">
-				<input type="text" id="desc" placeholder="Add description">
-				<input type="submit" value="Add URL"> 	
-			</form>
-<!--
+			
 			<a href="#openModal">Открыть окно ввода данных</a>
 			<div id="openModal" class="modalDialog">
 				<div>
 				<a href="#close" title="Закрыть" class="close">X</a>
 				<h2>Окно ввода данных</h2>
-					<form id="moya_forma form"  action="">
-						<input type="text" id="newURL" placeholder="Add new URL">
-						<input type="text" id="nameURL" placeholder="Add name URL">
-						<input type="text" id="desc" placeholder="Add description">
-						<button id="send" type="submit">Add URL</button>
-
-					</form>
+					<form id="myForm">
+				<input type="text" id="newURL" placeholder="Add new URL">
+				<input type="text" id="nameURL" placeholder="Add name URL">
+				<input type="text" id="desc" placeholder="Add description">
+				<input type="submit" value="Add URL"> 	
+			</form>
 				</div>
 			</div>
--->
 	
-			<div class = "table1" >
-				<div class="tbl-body"></div>
-				<div class="box-btn-clear"><button id="clear">очистить</button></div>
-		</div>
+			<div class="tblbody" style="display: none" ></div>
 	</div>
+		<!-- модальное окно для обновления задачи -->
+<div class="modal fade" id="updateTaskModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
 	</div>
 
-<!--
-	<script>
-		
-		$('.catalog').click(function() {
-  $('.table1').toggle();
-});
-
-	</script>
--->
-	
 </body>
 </html>
