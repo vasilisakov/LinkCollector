@@ -21,7 +21,7 @@
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
 	display: none;
-	pointer-events: none;
+
 }
 .modalDialog:target {
 	display: block;
@@ -59,9 +59,9 @@
 }
 
 .close:hover { background: #00d9ff; }
+
 input{
       display: inline-block;
-     
       font-family: Verdana, Arial, sans-serif;
       font-size: 16px;
     }
