@@ -1,6 +1,6 @@
 // JavaScript Document
 //Получаем доступ к таблице по ссылке с уникальным идентификатором
-var LinkCollector = SpreadsheetApp.openById("12Z9OGKaxJaTBoni9dDCc2bWH54m4URNz60RTBNXfqYo");
+var LinkCollector = SpreadsheetApp.openById("1RLpyjLO4-2-OaKyUMS4IZwxYec05HotUbtDX9p0rQrM");
 //Получаем доступ к странице по ее имени
 var Link1 = LinkCollector.getSheetByName("Link1");
 //Стандартная функция Google Apps Script для прослушивания входящих запросов, отправленных методом POST
@@ -8,8 +8,10 @@ function doPost (e) {
   var operation = e.parameter.action;//получаем параметр "action"
   
   switch (operation) {
+      case "fillingModal": return fillingModal (e);
       case "deleteLink": return deleteLink (e);
        case "addLink": return addLink (e);
+       case "updateLink": return updateLink (e);
   }
 
 }
@@ -26,8 +28,9 @@ function doGet (e) {
 }
 //Функция, отвечающая за добавление новых задач
 function addLink (e) {
-
-   var dateTime = Utilities.formatDate(new Date(), 'America/New_York', 'MMMM dd, yyyy HH:mm:ss Z');
+  
+    var dateTime ='i'+Date.now();
+//   var dateTime = Utilities.formatDate(new Date(), 'America/New_York', 'MMMM dd, yyyy HH:mm:ss Z');
   //определяем дату в нужном формате и часовом поясе
   var newURL = e.parameter.p1;//получаем название задачи в переданном параметре
    var nameURL = e.parameter.p2;
@@ -61,3 +64,52 @@ function deleteLink (e) {
 }
 
 
+//Функция, отвечающая за изменение задач
+function fillingModal (e) {
+  
+  var link = e.parameter.link;//получаем название задачи в переданном параметре
+  var lastrow = Link1.getLastRow();//получаем номер последней строки в таблице
+  var array = Link1.getRange("A1:A" + lastrow).getValues();//получаем массив указанных ячеек колонки, в которой будем искать соответствие
+  
+  for (var i = 0; i <= array.length; i++) {
+    if (array[i] == link) {//если элемент соответствует искомому в массиве, то...
+      var data = Link1.getRange("A"+ (i+1) +":D" + (i+1)).getValues();//получаем массив нужной строки
+      //возвращает в ответ полученные данные в JSON формате
+     return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+    }  
+  }
+}
+
+////Функция, отвечающая за обновление задач
+function updateLink (e) {
+  var link = e.parameter.link;//получаем id задачи в переданном параметре
+  //получаем новые значения
+  var newLink = e.parameter.newLink;
+  var newName = e.parameter.newName;
+  var newDesc = e.parameter.newDesc;
+  var lastrow = Link1.getLastRow();//получаем номер последней строки в таблице
+ 
+  
+  switch(link){
+    case "newLink":
+      var col = "B";
+    
+    case "newName":
+      var col = "C";
+    
+       case "newDesc":
+      var col = "D";
+      break;
+  }
+  var array = Link1.getRange("A1:A" + lastrow).getValues();//получаем массив указанных ячеек колонки, в которой будем искать соответствие
+  for (var i = 0; i <= array.length; i++) {
+    if (array[i] == link) {//если элемент соответствует искомому, то...
+      Link1.getRange("B" + (i+1)).setValue(newLink);//обращаемся к нашей странице  и обновляем нужную колонку, в которой было найдено совпадение
+      Link1.getRange("C" + (i+1)).setValue(newName);
+      Link1.getRange("D" + (i+1)).setValue(newDesc);
+      break;//завершаем цикл, т.к. мы нашли что искали и сделали, что хотели
+    }
+  }
+  
+  return ContentService.createTextOutput("Задача успешно обновлена!");
+}
